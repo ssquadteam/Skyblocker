@@ -770,6 +770,19 @@
   "skyblocker.config.slayer.endermanSlayer.enableYangGlyphsNotification": "Enable Yang Glyphs notification",
   "skyblocker.config.slayer.endermanSlayer.highlightBeacons": "Beacon Highlighting",
   "skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads": "Nukekubi Head Highlighting",
+  "skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads.@Tooltip": "Enables highlighting of Nukekubi Heads during the Enderman Slayer boss fight.",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle": "Nukekubi Head Highlight Style",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle.@Tooltip": "Choose between the default glow effect or a solid color highlight for Nukekubi Heads.",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle.GLOW": "Glow Effect",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle.SOLID_COLOR": "Solid Color",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityAlert": "Nukekubi Head Proximity Alert",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityAlert.@Tooltip": "Displays a warning message in the action bar when Nukekubi Heads are nearby.",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityRange": "Nukekubi Head Proximity Range",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityRange.@Tooltip": "The range in blocks to detect nearby Nukekubi Heads.",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadDirectionalIndicator": "Nukekubi Head Directional Indicator",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadDirectionalIndicator.@Tooltip": "Displays a directional indicator pointing towards nearby Nukekubi Heads.",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadContinuousSound": "Nukekubi Head Continuous Sound",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiHeadContinuousSound.@Tooltip": "Plays a continuous sound when Nukekubi Heads are nearby.",
   "skyblocker.config.slayer.endermanSlayer.lazerTimer": "Lazer Timer",
 
   "skyblocker.config.slayer.highlightMinis": "Highlight Minibosses",
@@ -970,7 +983,7 @@
   "skyblocker.config.uiAndVisuals.smoothAOTE.maximumAddedLag": "Maximum Added Lag (ms)",
   "skyblocker.config.uiAndVisuals.smoothAOTE.maximumAddedLag.@Tooltip": "How long the animation is allowed to get behind the game in milliseconds. (If set to 0, smoothing will not have any lag, but stuttering will likely occur. Increase this value if you're experiencing flashing.)",
 
-  
+
   "skyblocker.config.uiAndVisuals.tabHud": "Fancy HUD and TAB",
   "skyblocker.config.uiAndVisuals.tabHud.configScreen": "Open Config Screen",
   "skyblocker.config.uiAndVisuals.tabHud.defaultPositioning": "Default Positioning Behavior",

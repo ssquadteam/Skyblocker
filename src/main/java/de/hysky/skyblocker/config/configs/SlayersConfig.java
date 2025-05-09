@@ -54,7 +54,31 @@ public class SlayersConfig {
 		public boolean highlightNukekubiHeads = true;
 
 		@SerialEntry
+		public NukekubiHeadHighlightStyle nukekubiHeadHighlightStyle = NukekubiHeadHighlightStyle.GLOW;
+
+		@SerialEntry
+		public boolean nukekubiHeadProximityAlert = true;
+
+		@SerialEntry
+		public int nukekubiHeadProximityRange = 30;
+
+		@SerialEntry
+		public boolean nukekubiHeadDirectionalIndicator = true;
+
+		@SerialEntry
+		public boolean nukekubiHeadContinuousSound = true;
+
+		@SerialEntry
 		public boolean lazerTimer = true;
+
+		public enum NukekubiHeadHighlightStyle {
+			GLOW, SOLID_COLOR;
+
+			@Override
+			public String toString() {
+				return I18n.translate("skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle." + name());
+			}
+		}
 	}
 
 	public static class VampireSlayer {

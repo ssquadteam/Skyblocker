@@ -114,9 +114,50 @@ public class SlayersCategory {
 								.build())
 						.option(Option.<Boolean>createBuilder()
 								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads"))
+								.description(OptionDescription.of(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads.@Tooltip")))
 								.binding(defaults.slayers.endermanSlayer.highlightNukekubiHeads,
 										() -> config.slayers.endermanSlayer.highlightNukekubiHeads,
 										newValue -> config.slayers.endermanSlayer.highlightNukekubiHeads = newValue)
+								.controller(ConfigUtils::createBooleanController)
+								.build())
+						.option(Option.<SlayersConfig.EndermanSlayer.NukekubiHeadHighlightStyle>createBuilder()
+								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle"))
+								.description(OptionDescription.of(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadHighlightStyle.@Tooltip")))
+								.binding(defaults.slayers.endermanSlayer.nukekubiHeadHighlightStyle,
+										() -> config.slayers.endermanSlayer.nukekubiHeadHighlightStyle,
+										newValue -> config.slayers.endermanSlayer.nukekubiHeadHighlightStyle = newValue)
+								.controller(ConfigUtils::createEnumCyclingListController)
+								.build())
+						.option(Option.<Boolean>createBuilder()
+								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityAlert"))
+								.description(OptionDescription.of(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityAlert.@Tooltip")))
+								.binding(defaults.slayers.endermanSlayer.nukekubiHeadProximityAlert,
+										() -> config.slayers.endermanSlayer.nukekubiHeadProximityAlert,
+										newValue -> config.slayers.endermanSlayer.nukekubiHeadProximityAlert = newValue)
+								.controller(ConfigUtils::createBooleanController)
+								.build())
+						.option(Option.<Integer>createBuilder()
+								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityRange"))
+								.description(OptionDescription.of(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadProximityRange.@Tooltip")))
+								.binding(defaults.slayers.endermanSlayer.nukekubiHeadProximityRange,
+										() -> config.slayers.endermanSlayer.nukekubiHeadProximityRange,
+										newValue -> config.slayers.endermanSlayer.nukekubiHeadProximityRange = newValue)
+								.controller(opt -> IntegerSliderControllerBuilder.create(opt).range(10, 50).step(5))
+								.build())
+						.option(Option.<Boolean>createBuilder()
+								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadDirectionalIndicator"))
+								.description(OptionDescription.of(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadDirectionalIndicator.@Tooltip")))
+								.binding(defaults.slayers.endermanSlayer.nukekubiHeadDirectionalIndicator,
+										() -> config.slayers.endermanSlayer.nukekubiHeadDirectionalIndicator,
+										newValue -> config.slayers.endermanSlayer.nukekubiHeadDirectionalIndicator = newValue)
+								.controller(ConfigUtils::createBooleanController)
+								.build())
+						.option(Option.<Boolean>createBuilder()
+								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadContinuousSound"))
+								.description(OptionDescription.of(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiHeadContinuousSound.@Tooltip")))
+								.binding(defaults.slayers.endermanSlayer.nukekubiHeadContinuousSound,
+										() -> config.slayers.endermanSlayer.nukekubiHeadContinuousSound,
+										newValue -> config.slayers.endermanSlayer.nukekubiHeadContinuousSound = newValue)
 								.controller(ConfigUtils::createBooleanController)
 								.build())
 						.option(Option.<Boolean>createBuilder()
