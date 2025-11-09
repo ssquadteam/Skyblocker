@@ -162,12 +162,19 @@ public class SlayersCategory {
 								.controller(FloatController.createBuilder().range(0f, 1f).slider(0.05f).build())
 								.build())
 						.option(Option.<Float>createBuilder()
-								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiLineWidth"))
-								.binding(defaults.slayers.endermanSlayer.nukekubiLineWidth,
-										() -> config.slayers.endermanSlayer.nukekubiLineWidth,
-										newValue -> config.slayers.endermanSlayer.nukekubiLineWidth = newValue)
-								.controller(FloatController.createBuilder().range(1f, 10f).slider(0.5f).build())
-								.build())
+						        .name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiLineWidth"))
+						        .binding(defaults.slayers.endermanSlayer.nukekubiLineWidth,
+						                () -> config.slayers.endermanSlayer.nukekubiLineWidth,
+						                newValue -> config.slayers.endermanSlayer.nukekubiLineWidth = newValue)
+						        .controller(FloatController.createBuilder().range(1f, 10f).slider(0.5f).build())
+						        .build())
+						.option(Option.<Float>createBuilder()
+						        .name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiLineRadius"))
+						        .binding(defaults.slayers.endermanSlayer.nukekubiLineRadius,
+						                () -> config.slayers.endermanSlayer.nukekubiLineRadius,
+						                newValue -> config.slayers.endermanSlayer.nukekubiLineRadius = newValue)
+						        .controller(FloatController.createBuilder().range(10f, 100f).slider(5f).build())
+						        .build())
 						.option(Option.<Boolean>createBuilder()
 								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.lazerTimer"))
 								.binding(defaults.slayers.endermanSlayer.lazerTimer,

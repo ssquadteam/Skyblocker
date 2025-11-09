@@ -2,7 +2,6 @@ package de.hysky.skyblocker.skyblock.slayers.boss.voidgloom;
 
 import de.hysky.skyblocker.annotations.Init;
 import de.hysky.skyblocker.config.SkyblockerConfigManager;
-import de.hysky.skyblocker.skyblock.item.HeadTextures;
 import de.hysky.skyblocker.skyblock.slayers.SlayerManager;
 import de.hysky.skyblocker.skyblock.slayers.SlayerType;
 import de.hysky.skyblocker.skyblock.entity.glow.adder.SlayerGlowAdder;
@@ -11,9 +10,7 @@ import de.hysky.skyblocker.utils.Utils;
 import de.hysky.skyblocker.utils.render.WorldRenderExtractionCallback;
 import de.hysky.skyblocker.utils.render.primitive.PrimitiveCollector;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.decoration.ArmorStandEntity;
-import net.minecraft.util.math.ColorHelper;
 import net.minecraft.util.math.Vec3d;
 
 import java.awt.Color;
@@ -24,6 +21,7 @@ public class NukekubiHighlighter {
     private static float[] colorComponents = {1.0f, 0.0f, 1.0f};
     private static float alpha = 0.75f;
     private static float lineWidth = 3.0f;
+    private static float lineRadius = 40.0f;
 
     @Init
     public static void init() {
@@ -54,10 +52,11 @@ public class NukekubiHighlighter {
 
         alpha = config.nukekubiLineAlpha;
         lineWidth = config.nukekubiLineWidth;
+        lineRadius = config.nukekubiLineRadius;
 
         List<ArmorStandEntity> heads = client.world.getEntitiesByClass(
                 ArmorStandEntity.class,
-                client.player.getBoundingBox().expand(50),
+                client.player.getBoundingBox().expand(lineRadius),
                 NukekubiHighlighter::isNukekubiHead
         );
 
@@ -66,14 +65,31 @@ public class NukekubiHighlighter {
         }
 
         for (ArmorStandEntity entity : heads) {
-            Vec3d pos = entity.getPos();
-            collector.submitLineFromCursor(pos, colorComponents, alpha, lineWidth);
+            if (entity.distanceTo(client.player) > lineRadius) {
+                continue;
+            }
+
+            Vec3d headPos = entity.getPos().add(0, 1.0, 0);
+            collector.submitLineFromCursor(headPos, colorComponents, alpha, lineWidth);
         }
     }
 
     private static boolean isNukekubiHead(ArmorStandEntity entity) {
-        return entity.isMarker()
-                && SlayerGlowAdder.isNukekubiHead(entity);
+        if (!entity.isMarker()) {
+            return false;
+        }
+
+        if (!SlayerGlowAdder.isNukekubiHead(entity)) {
+            return false;
+        }
+
+        ArmorStandEntity bossArmorStand = SlayerManager.getSlayerBossArmorStand();
+        if (bossArmorStand == null) {
+            return false;
+        }
+
+        double maxDistanceSq = 40.0 * 40.0;
+        return entity.squaredDistanceTo(bossArmorStand) <= maxDistanceSq;
     }
 
     public static void configCallback(Color color) {

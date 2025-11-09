@@ -55,6 +55,8 @@ public class SlayersConfig {
 
 		public float nukekubiLineWidth = 3f;
 
+		public float nukekubiLineRadius = 40f;
+
 		public boolean lazerTimer = true;
 	}
 
