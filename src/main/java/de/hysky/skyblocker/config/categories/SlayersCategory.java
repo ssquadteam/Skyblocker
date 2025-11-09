@@ -112,39 +112,70 @@ public class SlayersCategory {
 								.build())
 						.build())
 
-				//Enderman Slayer
-				.group(OptionGroup.createBuilder()
-						.name(Text.translatable("skyblocker.config.slayer.endermanSlayer"))
-						.collapsed(true)
-						.option(Option.<Boolean>createBuilder()
-								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.enableYangGlyphsNotification"))
-								.binding(defaults.slayers.endermanSlayer.enableYangGlyphsNotification,
-										() -> config.slayers.endermanSlayer.enableYangGlyphsNotification,
-										newValue -> config.slayers.endermanSlayer.enableYangGlyphsNotification = newValue)
-								.controller(ConfigUtils.createBooleanController())
-								.build())
-						.option(Option.<Boolean>createBuilder()
-								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightBeacons"))
-								.binding(defaults.slayers.endermanSlayer.highlightBeacons,
-										() -> config.slayers.endermanSlayer.highlightBeacons,
-										newValue -> config.slayers.endermanSlayer.highlightBeacons = newValue)
-								.controller(ConfigUtils.createBooleanController())
-								.build())
-						.option(Option.<Boolean>createBuilder()
-								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads"))
-								.binding(defaults.slayers.endermanSlayer.highlightNukekubiHeads,
-										() -> config.slayers.endermanSlayer.highlightNukekubiHeads,
-										newValue -> config.slayers.endermanSlayer.highlightNukekubiHeads = newValue)
-								.controller(ConfigUtils.createBooleanController())
-								.build())
-						.option(Option.<Boolean>createBuilder()
-								.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.lazerTimer"))
-								.binding(defaults.slayers.endermanSlayer.lazerTimer,
-										() -> config.slayers.endermanSlayer.lazerTimer,
-										newValue -> config.slayers.endermanSlayer.lazerTimer = newValue)
-								.controller(ConfigUtils.createBooleanController())
-								.build())
-						.build())
+								//Enderman Slayer
+								.group(OptionGroup.createBuilder()
+										.name(Text.translatable("skyblocker.config.slayer.endermanSlayer"))
+										.collapsed(true)
+										.option(Option.<Boolean>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.enableYangGlyphsNotification"))
+												.binding(defaults.slayers.endermanSlayer.enableYangGlyphsNotification,
+														() -> config.slayers.endermanSlayer.enableYangGlyphsNotification,
+														newValue -> config.slayers.endermanSlayer.enableYangGlyphsNotification = newValue)
+												.controller(ConfigUtils.createBooleanController())
+												.build())
+										.option(Option.<Boolean>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightBeacons"))
+												.binding(defaults.slayers.endermanSlayer.highlightBeacons,
+														() -> config.slayers.endermanSlayer.highlightBeacons,
+														newValue -> config.slayers.endermanSlayer.highlightBeacons = newValue)
+												.controller(ConfigUtils.createBooleanController())
+												.build())
+										.option(Option.<Boolean>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads"))
+												.binding(defaults.slayers.endermanSlayer.highlightNukekubiHeads,
+														() -> config.slayers.endermanSlayer.highlightNukekubiHeads,
+														newValue -> config.slayers.endermanSlayer.highlightNukekubiHeads = newValue)
+												.controller(ConfigUtils.createBooleanController())
+												.build())
+										.option(Option.<Boolean>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.highlightNukekubiLines"))
+												.binding(defaults.slayers.endermanSlayer.highlightNukekubiLines,
+														() -> config.slayers.endermanSlayer.highlightNukekubiLines,
+														newValue -> config.slayers.endermanSlayer.highlightNukekubiLines = newValue)
+												.controller(ConfigUtils.createBooleanController())
+												.build())
+										.option(Option.<java.awt.Color>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiLineColor"))
+												.binding(defaults.slayers.endermanSlayer.nukekubiLineColor,
+														() -> config.slayers.endermanSlayer.nukekubiLineColor,
+														newValue -> {
+															config.slayers.endermanSlayer.nukekubiLineColor = newValue;
+															de.hysky.skyblocker.skyblock.slayers.boss.voidgloom.NukekubiHighlighter.configCallback(newValue);
+														})
+												.controller(net.azureaaron.dandelion.systems.controllers.ColourController.createBuilder().hasAlpha(false).build())
+												.build())
+										.option(Option.<Float>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiLineAlpha"))
+												.binding(defaults.slayers.endermanSlayer.nukekubiLineAlpha,
+														() -> config.slayers.endermanSlayer.nukekubiLineAlpha,
+														newValue -> config.slayers.endermanSlayer.nukekubiLineAlpha = newValue)
+												.controller(FloatController.createBuilder().range(0f, 1f).slider(0.05f).build())
+												.build())
+										.option(Option.<Float>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.nukekubiLineWidth"))
+												.binding(defaults.slayers.endermanSlayer.nukekubiLineWidth,
+														() -> config.slayers.endermanSlayer.nukekubiLineWidth,
+														newValue -> config.slayers.endermanSlayer.nukekubiLineWidth = newValue)
+												.controller(FloatController.createBuilder().range(1f, 10f).slider(0.5f).build())
+												.build())
+										.option(Option.<Boolean>createBuilder()
+												.name(Text.translatable("skyblocker.config.slayer.endermanSlayer.lazerTimer"))
+												.binding(defaults.slayers.endermanSlayer.lazerTimer,
+														() -> config.slayers.endermanSlayer.lazerTimer,
+														newValue -> config.slayers.endermanSlayer.lazerTimer = newValue)
+												.controller(ConfigUtils.createBooleanController())
+												.build())
+										.build())
 
 				//Vampire Slayer
 				.group(OptionGroup.createBuilder()

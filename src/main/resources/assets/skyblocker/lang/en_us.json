@@ -947,6 +947,11 @@
   "skyblocker.config.slayer.endermanSlayer.enableYangGlyphsNotification": "Enable Yang Glyphs notification",
   "skyblocker.config.slayer.endermanSlayer.highlightBeacons": "Beacon Highlighting",
   "skyblocker.config.slayer.endermanSlayer.highlightNukekubiHeads": "Nukekubi Head Highlighting",
+  "skyblocker.config.slayer.endermanSlayer.highlightNukekubiLines": "Highlight Nukekubi Lines",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiLineColor": "Nukekubi Line Color",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiLineAlpha": "Nukekubi Line Alpha",
+  "skyblocker.config.slayer.endermanSlayer.nukekubiLineWidth": "Nukekubi Line Width",
+  "skyblocker.config.slayer.endermanSlayer.highlightNukekubiLines.@Tooltip": "Draw lines from your crosshair to Nukekubi heads for better visibility",
   "skyblocker.config.slayer.endermanSlayer.lazerTimer": "Lazer Timer",
 
   "skyblocker.config.slayer.highlightMinis": "Highlight Minibosses",

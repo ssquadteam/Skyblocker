@@ -47,6 +47,14 @@ public class SlayersConfig {
 
 		public boolean highlightNukekubiHeads = true;
 
+		public boolean highlightNukekubiLines = true;
+
+		public java.awt.Color nukekubiLineColor = new java.awt.Color(0x990099);
+
+		public float nukekubiLineAlpha = 0.75f;
+
+		public float nukekubiLineWidth = 3f;
+
 		public boolean lazerTimer = true;
 	}
 

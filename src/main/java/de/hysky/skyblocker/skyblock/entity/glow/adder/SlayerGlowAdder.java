@@ -54,7 +54,8 @@ public class SlayerGlowAdder extends MobGlowAdder {
 	/**
 	 * Compares the armor items of an armor stand to the Nukekubi head texture to determine if it is a Nukekubi head.
 	 */
-	private static boolean isNukekubiHead(ArmorStandEntity entity) {
-		return entity.hasStackEquipped(EquipmentSlot.HEAD) && ItemUtils.getHeadTexture(entity.getEquippedStack(EquipmentSlot.HEAD)).equals(HeadTextures.NUKEKUBI);
+	public static boolean isNukekubiHead(ArmorStandEntity entity) {
+	    return entity.hasStackEquipped(EquipmentSlot.HEAD)
+	            && ItemUtils.getHeadTexture(entity.getEquippedStack(EquipmentSlot.HEAD)).equals(HeadTextures.NUKEKUBI);
 	}
 }
